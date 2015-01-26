@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+body {
+  background: white;
+}
+
+.content {
+  min-height: 100%;
+  margin-bottom: -100px;
+  &:after {
+    content: "";
+    display: block;
+    height: 100px;
+  }
+}

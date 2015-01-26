@@ -1,0 +1,28 @@
+<div class="dashboard">
+  <div class="ui action input">
+    <form ng-submit="dashboard.searchUser(dashboard.searchInput)">
+      <input type="text" ng-model="dashboard.searchInput" placeholder="Search Github User Profiles..."/>
+      <div class="ui button" ng-click="dashboard.searchUser(dashboard.searchInput)">Search</div>
+    </form>
+  </div>
+  <div class="result" ng-show="dashboard.isSearchValid">
+    <div>
+      <label>{{dashboard.user.name}}</label>
+      <br/>
+      <img id="gravitar-image" ng-src="{{dashboard.user.imgsrc}}"/>
+    </div>
+    <div class="repo-list">
+      <ul>
+        <li ng-repeat="repo in dashboard.user.repos">
+          {{repo.name}}
+        </li>
+      </ul>
+
+    </div>
+  </div>
+  <h1 ng-hide="dashboard.isSearchValid">No results match your query.</h1>
+
+
+  <div class='search-results'>
+  </div>
+</div>
